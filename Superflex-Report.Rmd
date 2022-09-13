@@ -684,7 +684,7 @@ summary_week %>%
   ggplot2::geom_bar(width=1, stat = 'identity') +
   coord_polar('y') +
   ggplot2::facet_wrap(~matchup_name) +
-  geom_text(aes(y = ypos, label = percent(Wins, accuracy = 1)), color = "white", size=4) +
+  geom_text(aes(y = ypos, label = percent(Wins, accuracy = 0.1)), color = "white", size=4) +
   theme_void() +
   ggplot2::theme(
     plot.title = element_text(margin=margin(0,0,10,0)),
