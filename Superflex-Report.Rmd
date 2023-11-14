@@ -1,5 +1,5 @@
 ---
-title: "2023 Super Flex Keeper League - Week 5"
+title: "2023 Super Flex Keeper League - Week 10"
 knit: (function(input_file, encoding) {
   out_dir <- 'docs';
   rmarkdown::render(input_file,
@@ -37,7 +37,7 @@ conn <- sleeper_connect(season = season, league_id = league_id)
 ff_league <- ff_league(conn)
 
 gameweek_start <- 1
-gameweek_end <- 5
+gameweek_end <- 10
 league_size <- as.numeric(ff_league$franchise_count)
 sims <- 1000
 
@@ -65,7 +65,7 @@ remove(df,datalist,i, json_players_parsed)
 
 ```
 
-```{r KTC fantasy, echo = F}
+```{r KTC fantasy, echo = F, eval = F}
 
 KTC_fantasy_url <- read_html(paste0('https://keeptradecut.com/fantasy-rankings?page=0&filters=QB|WR|RB|TE&format=', no_of_qbs))
 
@@ -888,13 +888,13 @@ matchup_imp %>%
 
 # Roster Comparison
 
-## Contender
+<!-- ## Contender -->
 
-The value of each roster has been calculated using crowdsourced values from [KeepTradeCut](https://keeptradecut.com/fantasy-rankings). A value is calculated for each player and these are totaled.
+<!-- The value of each roster has been calculated using crowdsourced values from [KeepTradeCut](https://keeptradecut.com/fantasy-rankings). A value is calculated for each player and these are totaled. -->
 
-The following chart looks at the value of the squad for this season. Any injuries will affect the value and immediate competitiveness of each team.
+<!-- The following chart looks at the value of the squad for this season. Any injuries will affect the value and immediate competitiveness of each team. -->
 
-```{r roster comparison fantasy, echo = F, message = F}
+```{r roster comparison fantasy, echo = F, message = F, eval = F}
 
 rosters <- rosters %>% 
   left_join(df_KTC_fantasy_join[, c('player_id', 'Value')], by = 'player_id', suffix = c('', '.contender')) 
