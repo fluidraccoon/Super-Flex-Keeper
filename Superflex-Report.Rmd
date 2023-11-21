@@ -1,5 +1,5 @@
 ---
-title: "2023 Super Flex Keeper League - Week 10"
+title: "2023 Super Flex Keeper League - Week 11"
 knit: (function(input_file, encoding) {
   out_dir <- 'docs';
   rmarkdown::render(input_file,
@@ -37,7 +37,7 @@ conn <- sleeper_connect(season = season, league_id = league_id)
 ff_league <- ff_league(conn)
 
 gameweek_start <- 1
-gameweek_end <- 10
+gameweek_end <- 11
 league_size <- as.numeric(ff_league$franchise_count)
 sims <- 1000
 
